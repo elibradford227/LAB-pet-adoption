@@ -1,6 +1,38 @@
 body {
   margin: 0 auto;
-  width: 50%
+  width: 50%;
+  background-color: pink;
+}
+
+.buttons {
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+}
+
+#showall, #dogbtn, #catbtn, #dinobtn {
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+
+#showall {
+  color: black;
+}
+
+#dogbtn {
+  background-color: #0A4D68;
+}
+
+#catbtn {
+  background-color: #05BFDB;
+}
+
+#dinobtn {
+  background-color: #00FFCA;
+  color: black;
 }
 
 .card {
