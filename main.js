@@ -258,6 +258,7 @@ const cardsOnDom = (array) => {
             <p class="card-text">Color: ${pet.color}</p>
             <p>Special Skill: ${pet.specialSkill}</p>
             <p>Type: ${pet.type}</p>
+            <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
           </div>
        </div>
     </div>`
@@ -301,12 +302,46 @@ dinoBtn.addEventListener('click', () => {
   cardsOnDom(dinos);
 })
 
+const form = document.querySelector('form');
+
+const createPet = (e) => {
+  e.preventDefault();
+
+  const newPetObj = {
+    id: pets.length + 1,
+    imageUrl: document.querySelector('#petimage').value,
+    name: document.querySelector('#petname').value,
+    color: document.querySelector('#petcolor').value,
+    specialSkill: document.querySelector('#petskill').value,
+    type: document.querySelector("#pettype").value
+  }
+
+  pets.push(newPetObj);
+  cardsOnDom(pets);
+  form.reset();
+}
+
+form.addEventListener('submit', createPet);
+
+const app = document.querySelector("#app");
+
+app.addEventListener('click', (e => {
+  console.log(e.target.id)
+  if(e.target.id.includes("delete")) {
+    const [, id] = e.target.id.split("--");
+
+    const index = pets.findIndex(e => e.id === Number(id));
+
+    pets.splice(index, 1);
+
+    cardsOnDom(pets)
+  }
+}))
 
 
 
 
-
-//Legacy static ver.
+// Legacy static ver.
 // const targetingApp = document.querySelector("#app");
 // console.log(targetingApp);
 // let domString = '';
