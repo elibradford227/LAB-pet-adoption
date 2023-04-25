@@ -283,6 +283,7 @@ const catBtn = document.querySelector('#catbtn')
 const dinoBtn = document.querySelector('#dinobtn')
 const showAll = document.querySelector('#showall')
 
+
 showAll.addEventListener('click', () => {
   cardsOnDom(pets);
 })
@@ -301,6 +302,8 @@ dinoBtn.addEventListener('click', () => {
   const dinos = filter(pets, 'dino');
   cardsOnDom(dinos);
 })
+
+
 
 const form = document.querySelector('form');
 
@@ -329,11 +332,9 @@ app.addEventListener('click', (e => {
   console.log(e.target.id)
   if(e.target.id.includes("delete")) {
     const [, id] = e.target.id.split("--");
-
+  
     const index = pets.findIndex(e => e.id === Number(id));
-
     pets.splice(index, 1);
-
     cardsOnDom(pets)
   }
 }))
