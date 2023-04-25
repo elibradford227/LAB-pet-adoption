@@ -11,7 +11,7 @@ body {
   height: 40px;
 }
 
-#showall, #dogbtn, #catbtn, #dinobtn {
+#showall, #dogbtn, #catbtn, #dinobtn, #addpet {
   width: 100px;
   border-radius: 5px;
   border: none;
@@ -33,6 +33,10 @@ body {
 #dinobtn {
   background-color: #00FFCA;
   color: black;
+}
+
+#addpet {
+  color: black
 }
 
 .card {
